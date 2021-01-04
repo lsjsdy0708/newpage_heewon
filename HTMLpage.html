@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>soojin's first page</title>
+  
+         <style type="text/css" media="screen, print"> 
+            @font-face { font-family: 'GmarketSansMedium';
+                src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff'); 
+                format('woff');
+                font-weight: normal;
+                font-style: normal;
+                }
+             </style>
+
+
+    <!--초기화-->
+    <style>
+        *{margin:0; padding:0;}
+        body{ font-family:'GmarketSansMedium',normal;}
+        li{list-style: none;}
+        a{text-decoration: none;}
+        img{border: 0;}
+    </style>
+    <!--헤더-->
+    <style>
+    #main_header{
+        /*가운데 정렬*/
+        width: 960px; margin: 0 auto;
+        /*절대좌표*/
+        height: 160px;
+        position: relative;
+    }
+    #main_header>#title{
+        position: absolute;
+        text-align: center;
+        left:350px;
+        top: 15px;
+    }
+    #main_header>#main_lnb{
+        position: absolute; 
+        text-align: center;
+        right:200px;
+        bottom:20px;
+    }
+    </style>
+    <!--타이틀-->
+    <style>
+    #title{
+        font-family:'GmarketSansMedium',normal;
+    }
+    </style>
+    <!--메뉴-->
+    <style>
+        #main_lnb>ul{overflow: hidden;}
+        #main_lnb>ul>li{float: left;}
+        #main_lnb>ul>li>a{
+            display:block;
+            padding:10px 10px;
+        }
+        #main_lnb>ul>li>a:hover{
+            background:black;
+            color:white;
+        }
+        #main_lnb>ul>li:first-child>a{border-radius: 10px 0 0 10px;}
+        #main_lnb>ul>li:last-child>a{border-radius: 0 10px 10px 0;}
+    </style>
+    <!--콘텐츠-->
+    <style>
+        #content{
+        /*중앙정렬*/
+        width: 960px; margin: 0 auto;
+        /*수평레이아웃 구성*/
+        overflow: hidden;
+        }
+        #content> #main_aside{
+            width: 200px;
+            float:left;
+        }
+        #content>#main_section>#main_article{
+            width: 660px;
+            float: right;
+        }
+    </style>
+    <!--본문-->
+    
+    <style>
+         #main_section{
+        font-family:'GmarketSansMedium',normal;
+        }
+        #main_section>article.main_article{
+            margin-bottom: 10px;
+            padding:30px;
+            border:1px solid black;
+            
+        }  
+        .item2{
+            overflow: hidden;
+        }  
+        .picture{
+            float: left;
+        }
+        
+     
+          
+    </style>
+    <!--사이드-->
+    <style>
+        /*첫번째 탭*/
+        input:nth-of-type(1){display: none;}
+        input:nth-of-type(1)~div:nth-of-type(2){display: none;}
+        input:nth-of-type(1):checked~div:nth-of-type(1){display: block;}
+        /*두번째 탭*/
+        input:nth-of-type(2){display: none;}
+        input:nth-of-type(2)~div:nth-of-type(1){display:none;}
+        input:nth-of-type(2):checked~div:nth-of-type(2){display: block;}
+
+        /*탭 모양 결정*/
+        section.buttons{overflow: hidden;}
+        section.buttons>label:nth-of-type(1){
+            /*수평정렬*/
+            display:block; float: left;
+
+            /*크기 및 글자 위치 지정*/
+            width: 80px; height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 5px 0 0 5px;
+            
+
+           /*색상지정*/
+           background: white;
+           color: black;
+        }
+        section.buttons>label:nth-of-type(2){
+            /*수평정렬*/
+            display:block; float: left;
+
+            /*크기 및 글자 위치 지정*/
+            width: 100px; height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 0 5px 5px 0;
+
+           /*색상지정*/
+           background: white;
+           color: black;
+        }
+        input:nth-of-type(1):checked~section.buttons>label:nth-of-type(1){
+            background:black;
+            color: white;
+        }
+        input:nth-of-type(2):checked~section.buttons>label:nth-of-type(2){
+            background:black;
+            color: white;
+        }
+    </style>
+    <!--목록-->
+    <style>
+        .item{
+            overflow: hidden;
+            padding:10px;
+           
+        }
+        .thumbnail{
+            float: left;
+        }
+        
+    </style>
+    <!--푸터-->
+    <style>
+        #main_footer{
+            /*중앙정렬*/
+            width:960px; margin: 0 auto;
+            margin-bottom:10px;
+            padding: 20px;
+            /*글자 정렬*/
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header id="main_header">
+        <div id="title">
+            <h2>히언이에게 바치는</h2>
+            <h1>뜬금없이 만든 페이지</h1>
+        </div>
+        <nav id="main_lnb">
+            <ul>
+                <li><a herf="#">아직</a></li>
+                <li><a herf="#">정해진게</a></li>
+                <li><a herf="#">없어</a></li>
+                <li><a herf="#">누르지마</a></li>
+                <li><a herf="#">어차피</a></li>
+                <li><a herf="#">아무것도</a></li>
+                <li><a herf="#">안나와</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        <aside id="main_aside">
+            <input id="first" type="radio" name="tab" checked="checked" />
+            <input id="second" type="radio" name="tab" />
+            <section class="buttons">
+                <label for="first">고닥교 때</label>
+                <label for="second">대학교 때</label><br><br>
+            </section>
+            <div class="tab_item">
+                <ul>
+                    <li class="item"><a herf="#">
+                        <div class="thumbnail">
+                            <img src="1.jpg" alt="모를 때" width="130" height="130"/>
+                        </div>
+                        <div class="heeon_description">
+                            <strong>2016.**</strong><br>
+                            <p>희원이 모를 때</p>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="item"><a herf="#">
+                        <div class="thumbnail">
+                            <img src="2.jpg" alt="안친" width="130" height="130"/>
+                        </div>
+                        <div class="heeon_description">
+                            <strong>2017.1,2분기</strong><br>
+                            <p>희원이랑 안 친할 때</p>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="item"><a herf="#">
+                        <div class="thumbnail">
+                            <img src="3.jpg" alt="말좀했음" width="130" height="130"/>
+                        </div>
+                        <div class="heeon_description">
+                            <strong>2017.3,4분기</strong><br>
+                            <p>희원이랑 말 좀 할 때</p>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="item"><a herf="#">
+                        <div class="thumbnail">
+                            <img src="4.jpg" alt="점친" width="130" height="130"/>
+                        </div>
+                        <div class="heeon_description">
+                            <strong>2018.1,2분기</strong><br>
+                            <p>희원이랑 점점 친할 때</p>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="item"><a herf="#">
+                        <div class="thumbnail">
+                            <img src="5.jpg" alt="친" width="130" height="130"/>
+                        </div>
+                        <div class="heeon_description">
+                            <strong>2018.3,4분기</strong><br>
+                            <p>희원이랑 친할 때</p>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="item"><a herf="#">
+                        <div class="thumbnail">
+                            <img src="6.jpg" alt="스물" width="130" height="130"/>
+                        </div>
+                        <div class="heeon_description">
+                            <strong>2019.01</strong><br>
+                            <p>희원이랑 갓 스물</p>
+                        </div>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab_item">
+                <ul>
+                    <li class="item"><a herf="#">
+                        <div class="thumbnail">
+                            <img src="7.jpg" alt="대학생" width="130" height="130"/>
+                        </div>
+                        <div class="heeon_description">
+                            <strong>2019.03-06</strong><br>
+                            <p>희원이랑 각자 학교생활할 때</p>
+                         </div>
+                    </a>
+                    </li>
+                    <li class="item"><a herf="#">
+                         <div class="thumbnail">
+                            <img src="8.jpg" alt="여름방학1" width="130" height="130"/>
+                         </div>
+                         <div class="heeon_description">
+                             <strong>2019.07-08</strong><br>
+                             <p>희원이랑 여름방학 때</p>
+                         </div>
+                     </a>
+                     </li>
+                    <li class="item"><a herf="#">
+                        <div class="thumbnail">
+                            <img src="9.jpg" alt="긱사" width="130" height="130"/>
+                        </div>
+                        <div class="heeon_description">
+                            <strong>2019.09-12</strong><br>
+                            <p>나 긱사살아서 희원이랑 못놀 때</p>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="item"><a herf="#">
+                        <div class="thumbnail">
+                            <img src="10.jpg" alt="I don't know" width="130" height="130"/></div>
+                        <div class="heeon_description">
+                            <strong>2020.01-02</strong><br>
+                            <p>어떻게 될지 모르고 놀 때</p>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="item"><a herf="#">
+                        <div class="thumbnail">
+                            <img src="11.jpg" alt="공부" width="130" height="130"/>
+                        </div>
+                        <div class="heeon_description">
+                            <strong>2020.03-06</strong><br>
+                            <p>희원이랑 공부하며 놀 때</p>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="item"><a herf="#">
+                        <div class="thumbnail">
+                            <img src="12.jpg" alt="여름방학2" width="130" height="130"/>
+                        </div>
+                        <div class="heeon_description">
+                            <strong>2020.07-10</strong><br>
+                            <p>희원이랑 맞던 여름</p>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="item"><a herf="#">
+                        <div class="thumbnail">
+                            <img src="13.jpg" alt="겨울" width="130" height="130"/>
+                        </div>
+                        <div class="heeon_description">
+                            <strong>2020.11-12</strong><br>
+                            <p>희원이랑 보낸 겨울</p>
+                        </div>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <section class ="main_section">
+            <article class="main_article">
+                <h1>💥💥💥🖤희원이에게 쓰는 편지💝💥💥💥</h1><br>
+                <P> 헤헷 히오나 안뇽 💛💛💛💛💛 내가 그냥... 어 자기계발을 하고자 웹페이지를 만들고 싶었는데...아니 근데 말이야 완전 뭘 만들지 모르겠는거야
+                    그래서 그냥 너를 위해서 내가 페이지를 하나 만들었어.. 어차피 뭐...그냥 연습용으로 만든거고...어 뭐 아무튼 좋아한다고 ㅎㅎ
+                    2시반쯤 만들기 시작했는데 지금 5시 31분이다. 3시간이나 걸렸네.... 근데 3시간에 이정도 만든거면 난 만족해 ㅎㅎ 이정도면 선방했지
+                    앞으로 더 꾸미기 시작해야되는데 아주 고난이다 벌써 막막해ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 이거 보고 너 완전 어이없겠다 이런걸 이렇게 정성스럽게 만들일인가 싶겠지?
+                    그치만 내가 널 사랑해서 그런거라고 생각하자 ㅎㅎ 알겠지?
+                    지금 사실 페이지를 만들려면 글이 있어야하고... 그 빈 공간이 꼴도 보기 싫어서 지금 이렇게 편지랍시고 아무말이나 쓰고 있는거야 괜찮지?
+                    나 지금 적재 반짝 빛나던, 나의 2006년 듣고있는데 완전 좋다 노래 진짜 이거 들으면 눈물 날거같다고ㅠㅠ
+                    완전 우리 옛날 모습 같아서 정말 눈물이 나더라(사실 안울음) 반짝 빛나던 나의 2019년인거같아. 너네랑 내 동기들이 각자 할 일을 찾고 각자의 자리에서 열심히
+                    일하고 있는 모습을 보면 왜이렇게 눈물이 날것 같지 ㅠ 결혼하면 난 울거야ㅠㅠ 엉엉 울거야 결혼식장에서 (물론 내 결혼식 말고)
+                    내 결혼식에서 울지 마 알겠지? 사진찍어야하는데 얼굴 망가지잖아~ 응? 뚝~
+                    내가 두번째 월급을 타면 너 밥 사줄게. 첫 월급은 우리 엄마아빠 살림에 보태주고~ 두번째 월급을 너한테 쓸게 ㅎㅎ 어때? 히언아? 슬퍼?
+                    히언이는 벌써 아직도 나랑 2년밖에 안놀았는데 이렇게나 친해졌다! 내가 봤을때는 너는 나랑 평생 친구 할 것 같아. 둘중 한명이 잘못하지 않는 이상 ㅎㅎ
+                    희원아 내가 웹 페이지 하나를 통째로 너를 주제로 만든 것 만큼 내가 널 아낀다는 걸 알아줘~ 와 진짜 나 근데 최근 한달간 애정표현을 너한테 제일 많이 한듯...🧝‍♀️
+                    무슨일이지 이게.... 암튼 니가 좋다면 다행이지만..... 아무튼 이만 줄일게~ 이정도 편지 썼으면 앵간히 페이지 분량 차지 했겄지 ㅎㅎ ~ 안뇽! 사랑해~❤❤❤
+                </P><br>
+            </article>
+            <article class="main_article">
+                <h1>🧡희원이랑 있었던 일💜</h1><br>
+                <ul>
+                <li class="item2">
+                    <div class="picture">
+                         <img src="hangung.jpg" alt="행궁동" width="150" height="150"/></div>
+                    <div class="picture_description">
+                        <P>아니 이거는 내가 계속 기억하고 싶은 기억이야.... 히언이랑 논 것중에 제일 재밌었어..왜일까? 아니 음 제일 재밌었다기보단 제일 알찼던 것만 같아
+                          브이로그도 찍고 난 너무 즐거웠어 히언아 우리 또 다시 놀러가자.. 그날이 왔으면 좋겠어. 이번엔 여행을 가자 ㅎㅎ헤헷
+                     </P></div>
+                </li>
+                <li class="item2">
+                    <div class="picture">
+                        <img src="helpme.jpg" alt="매달린 히언" width="150" height="150"/></div>
+                     <div class="picture_description">
+                        <p>ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 살려줘~! 살려줘~!!! 나좀 살려줘~!!!! 표정좀 봐라 아주 살려
+                             달라고 난리난 표정이다 아주 절대 안구해주지
+                        </p></div>
+                </li>
+                <li class="item2">
+                    <div class="picture">
+                        <img src="soragea.jpg" alt="소라게 히언" width="150" height="150" /></div>
+                     <div class="picture_description">
+                        <p>ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ희원이는 모를거야.. 내가 이런 사진이 있는줄... ㅋㅎㅋㅎ 어림도 없이 무조건 저장하지;;; 희원아 다시 한번만 진지하게 소라게 해줘    
+                        </p></div>
+                 </li>
+                 <li class="item2">
+                    <div class="picture">
+                        <img src="sexyqueen.jpg" alt="섹시퀸 수진" width="150" height="150"/></div>
+                    <div class="picture_description">
+                      <p>희원이가 필카로 찍어준 세기의 섹시퀸 수진이다.... 이건 나중에 박물관에도 실릴 엄청난.. 사진이다... 내복입고 저렇게 섹시할 수 있는 사람은 흔치않다
+                         알아둬라..진짜 100년후 교과서에 실린다... 세기의 미인...lee
+                      </p></div>
+                </li>
+                </ul><br>
+           </article>
+            <article class="main_article">
+                <h1>💔희원이의 비밀💔</h1><br>
+                <P>ㅎㅎㅎ 이헌이 비밀은....바로바로...근데 히언이 비밀같은건 잘 모르겠는데...원래 모르겠는게 맞는건가........ 맞나? 나한테만 얘기해준건데 내가 다른애들한테도
+                    알린 줄 알고있는거 같아서... 비밀인지 아닌지도 모르겠네 이게......... 무슨말인지 알겠찌 근데 진짜로 비밀이 뭐야 히언아? 나한테만 비밀이 뭔지 알려주라 진짜 
+                    아무한테도 말 안한 비밀같은거 있잖아. 내 비밀은 이번학기 학점이랑....음.....컴활 떨어진거...랑 공모전 떨어진거.....랑....복전 떨어진..거ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
+                    ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
+               </P>
+            </article>
+        </section>
+    </div>
+    <footer id="main_footer">
+        <h3>감동해서 나에게 돈이 주고 싶어졌다면</h3>
+        <address>우리 1002-456-635273 이수진</address>
+    </footer>
+</body>
+</html>
